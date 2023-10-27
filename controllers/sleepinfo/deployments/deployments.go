@@ -9,6 +9,7 @@ import (
 
 	appsv1 "k8s.io/api/apps/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client"
+	"time"
 )
 
 type deployments struct {
@@ -75,6 +76,7 @@ func (d deployments) WakeUp(ctx context.Context) error {
 
 		newDeploy := deployment.DeepCopy()
 		*newDeploy.Spec.Replicas = replica
+		time.Sleep(5 * time.Second) 
 
 		if err := d.Patch(ctx, &deployment, newDeploy); err != nil {
 			return err
