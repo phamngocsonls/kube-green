@@ -1,3 +1,7 @@
+Release:
+- Sleep each time scale up Deployment for 10s, image: ```phamngocsonls/kube-green:0.5.2-sleep10```
+
+
 [![Go Report Card][go-report-svg]][go-report-card]
 [![Coverage][test-and-build-svg]][test-and-build]
 [![Security][security-badge]][security-pipelines]
