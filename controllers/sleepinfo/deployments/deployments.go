@@ -76,7 +76,7 @@ func (d deployments) WakeUp(ctx context.Context) error {
 
 		newDeploy := deployment.DeepCopy()
 		*newDeploy.Spec.Replicas = replica
-		time.Sleep(5 * time.Second) 
+		time.Sleep(10 * time.Second) 
 
 		if err := d.Patch(ctx, &deployment, newDeploy); err != nil {
 			return err
